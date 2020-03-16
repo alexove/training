@@ -18,9 +18,10 @@ class VerificationController {
                 }
             }
             if(c.size()==1){
-                render "SI EXISTE => ${c.get(0).enrollment.student.name}"
+                [existe:true,serialNumber:serialNumber,student:c.get(0).enrollment.student,
+                enrollment:c.get(0).enrollment,course:c.get(0).enrollment.course]
             }else{
-                render "NO EXISTE"
+                [existe:false]
             }
         }
     }
